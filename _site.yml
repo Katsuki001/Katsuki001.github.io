@@ -1,13 +1,20 @@
-name: "Yay internet!"
+name: "Yitian He"
 output_dir: "."
 navbar:
   title: "Home"
   right:
+    - text: "Blog"
+      href: blog.html
     - text: "About"
       href: about.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<yih4002@med.cornell.edu>
     - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+      href: http://github.com/Katsuki001/
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/he_yitian
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/yitian-he-150846141/
+
 output:
   html_document

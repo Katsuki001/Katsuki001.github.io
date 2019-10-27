@@ -1,7 +1,19 @@
 ---
-title: "Holy cow!"
+title: "Yitian He"
 ---
 
-### I have a webpage!
+#### *Weill Cornell Graduate School of Medical Science*
 
-And I can put all kinds of stuff on it!
+<br>
+
+```{r, out.width = '30%', fig.align='center', echo=FALSE}
+library(knitr)
+include_graphics("Profile_image.jpg")
+```
+
+<br>
+
+I am a master of science student in [Biostatistics & Data Science](https://gradschool.weill.cornell.edu/biostatistics-and-data-science) track in the [Healthcare Policy and Research Department](http://hpr.weill.cornell.edu) at [Weill Cornell Medicine](https://weill.cornell.edu).
+I graduated from [University of Wisconsin](https://www.wisc.edu/) in May 2019 with a BS degree in Statistics.
+
+Here is my full [Resume](files/Yitian_He_Resume.pdf).

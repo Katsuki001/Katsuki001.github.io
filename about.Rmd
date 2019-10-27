@@ -2,8 +2,14 @@
 title: "About"
 ---
 
-### About this site
+<br>
 
-Sometimes you need to say a bit about the site -- how it was made, where it's hosted, where the source code can be found. 
+This is my dog Panghu. He is a two-year old shiba inu:)
 
-If this is for a project or analysis, I recommend giving some details about the R package versions that you used to create the content.
+<br>
+
+```{r, echo=FALSE}
+library(knitr)
+include_graphics("dog.jpeg")
+```
+

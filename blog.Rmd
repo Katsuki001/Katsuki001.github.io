@@ -1,0 +1,178 @@
+---
+title: "Blog"
+output: html_document
+---
+
+<br>
+
+### Making Beautiful Plots in R using ggplot2
+
+Data visualization, one of the important steps in data science, is the graphical representation of information and data. The goal is to communicate information clearly and efficiently to users. In this post, I will talk about how to make some beautiful plots in R using the ggplot2 package.
+```{r}
+library(ggplot2)
+library(ggthemes)
+library(wesanderson)
+library(ggridges)
+```
+
+<br>
+
+##### Data
+
+We will use the built-in dataset "mtcars" as an example. 
+Firstly, let's look at the data:
+```{r}
+head(mtcars)
+```
+<br>
+
+##### ggplot: ggplot()
+
+Then we start to make an empty plot with the data mtcars:
+```{r}
+ggplot(data = mtcars)
+```
+<br>
+
+##### Aethetics: aes()
+
+We set the aethetics of the ggplot by using aes(). For example, we try the make a plot about the relationship between weight and mpg of cars.
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))
+```
+<br>
+
+##### Geometric object: geom_
+
+We use geom_ to tell the plot how we want to display our data. In this example, we will use geom_point().
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point()
+  
+```
+<br>
+
+##### Add more aethetics
+
+People do not like black and white plots so that let's show some color! In this case, let's try different color based on the number of cylinders.
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point(aes(color = cyl))
+```
+<br>
+
+##### Add more geom_
+We can add more than one geometric object to the plot using geom_. For this example, we add a smoothed conditional mean to the plot using geom_smooth().
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point(aes(color = cyl))+
+  geom_smooth()
+```
+<br>
+
+##### Change the appearace of geom_smooth
+We can modify the appearance of the line of smoothed conditional mean.
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point(aes(color = cyl))+
+  geom_smooth(color = "black", size = 0.6, linetype = 2)
+```
+<br>
+
+##### Change the theme
+To make the plot look better, we can modify the theme from the "ggthemes" package.
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point(aes(color = cyl))+
+  geom_smooth(color = "black", size = 0.6, linetype = 2)+
+  theme_few()
+```
+
+##### Use a better colot set
+
+The default color of the points is so boring. Let's try something fun!
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point(aes(color = cyl))+
+  geom_smooth(color = "black", size = 0.6, linetype = 2)+
+  theme_few()+
+  scale_color_gradientn(colors = wes_palette("Darjeeling1"))
+  
+```
+
+
+
+
+
+##### Change labels and title
+A good plot should contain information about x and y axis, the guide and also a title 
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point(aes(color = cyl))+
+  geom_smooth(color = "black", size = 0.6, linetype = 2)+
+  theme_few()+
+  scale_color_gradientn(colors = wes_palette("Darjeeling1"))+
+  xlab("Car Weight")+
+  ylab("Car mpg")+
+  ggtitle("Car weight vs Car mpg")+
+  guides(color=guide_legend(title="Number of cylinders"))
+```
+<br>
+
+Now our plot looks very beautiful:) 
+
+##### Facet
+We can also look in details by using facet(). 
+```{r}
+ggplot(data = mtcars, 
+       aes(x = wt, y = mpg))+
+  geom_point(aes(color = cyl))+
+  theme_few()+
+  scale_color_gradientn(colors = wes_palette("Darjeeling1"))+
+  xlab("Car Weight")+
+  ylab("Car mpg")+
+  ggtitle("Car weight vs Car mpg")+
+  guides(color=guide_legend(title="Number of cylinders"))+
+  facet_grid(~cyl)
+```
+
+
+Everyone has can build beautiful plots by using ggplot2. Explore more ggplot2 by yourself and play with it:)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
